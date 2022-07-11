@@ -1,0 +1,11 @@
+mysql query:-
+WITH HOTELS AS (
+SELECT * FROM DBO.['2018$']
+UNION 
+SELECT * FROM DBO.['2019$']
+UNION
+SELECT * FROM DBO.['2020$'])
+
+select* from HOTELS
+ left join dbo.market_segment$ on HOTELS.market_segment=market_segment$.market_segment
+ left join  dbo.meal_cost$ on meal_cost$.meal=HOTELS.meal
